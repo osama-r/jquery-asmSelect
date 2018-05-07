@@ -122,7 +122,7 @@
 				// an item has been selected on the regular select we created
 				// check to make sure it's not an IE screwup, and add it to the list
 
-				if($.browser.msie && $.browser.version < 7 && !ieClick) return;
+				if(navigator.userAgent.toUpperCase().indexOf('MSIE') && $.browser.version < 7 && !ieClick) return;
 				var id = $(this).children("option:selected").slice(0,1).attr('rel'); 
 				if(id) { 
 					// thanks to petersumskas and eliel_goco@yahoo.com
@@ -157,7 +157,7 @@
 
 				// opera has an issue where it needs a force redraw, otherwise
 				// the items won't appear until something else forces a redraw
-				if($.browser.opera) $ol.hide().fadeIn("fast");
+				if(navigator.userAgent.toUpperCase().indexOf('OPERA')) $ol.hide().fadeIn("fast");
 			}
 
 			function buildSelect() {
